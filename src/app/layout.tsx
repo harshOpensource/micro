@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { ModalProvider } from "@/providers/modal-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500"] });
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <ConvexClientProvider>
+          <ModalProvider />
           <Toaster position="top-center" />
           {children}
         </ConvexClientProvider>
