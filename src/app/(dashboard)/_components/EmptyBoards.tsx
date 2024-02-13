@@ -21,12 +21,9 @@ export const EmptyBoards = () => {
       title: "Untitled",
     })
       .then((id) => {
-        toast.success("Board created successfully");
-        //redirect
+        toast.success("Board created");
       })
-      .catch((error) => {
-        toast.error("Failed to create board");
-      });
+      .catch(() => toast.error("Failed to create board"));
   };
 
   return (
