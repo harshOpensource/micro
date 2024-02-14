@@ -234,3 +234,13 @@ export const unfavorite = mutation({
     return board;
   },
 });
+
+export const gets = query({
+  args: {
+    id: v.id("boards"),
+  },
+  handler(ctx, args) {
+    const boards = ctx.db.get(args.id);
+    return boards;
+  },
+});
